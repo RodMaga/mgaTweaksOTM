@@ -1,0 +1,8 @@
+logs/
+backups/
+*.ps1~
+*.tmp
+*.bak
+*.log
+node_modules/
+.vscode/

@@ -1,0 +1,1 @@
+# Verificação/execução como admin

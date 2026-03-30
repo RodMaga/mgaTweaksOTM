@@ -1,0 +1,1 @@
+# Otimizações de rede/latência
