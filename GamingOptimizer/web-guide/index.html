@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GamingOptimizer Visual Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+
+  <header class="hero">
+    <p class="eyebrow">Localhost Book</p>
+    <h1>GamingOptimizer Toolkit Atlas</h1>
+    <p class="subtitle">
+      Um guia visual para veres, entenderes e executares todas as ferramentas de otimizacao do projeto.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#catalog">Ver Ferramentas</a>
+      <button id="toggleSteps" class="btn btn-ghost" type="button">Mostrar Passos de Uso</button>
+    </div>
+
+    <section id="quickSteps" class="quick-steps hidden" aria-live="polite">
+      <h2>Como usar</h2>
+      <ol>
+        <li>Abre PowerShell na raiz do projeto.</li>
+        <li>Corre <code>.\\web-guide\\Start-LocalGuide.ps1</code>.</li>
+        <li>Abre o browser em <code>http://localhost:8080</code>.</li>
+      </ol>
+    </section>
+  </header>
+
+  <main id="catalog" class="catalog">
+    <section class="wizard" id="wizard">
+      <div>
+        <p class="eyebrow">Quick Setup</p>
+        <h2 class="section-title">Escolhe o teu objetivo</h2>
+        <p class="subtitle">Seleciona um modo para destacar as ferramentas mais relevantes.</p>
+      </div>
+      <div class="wizard-actions">
+        <button class="btn btn-ghost wizard-btn" data-mode="all" type="button">Tudo</button>
+        <button class="btn btn-ghost wizard-btn" data-mode="competitive" type="button">Competitivo</button>
+        <button class="btn btn-ghost wizard-btn" data-mode="streaming" type="button">Streaming</button>
+        <button class="btn btn-ghost wizard-btn" data-mode="safe" type="button">So Seguros</button>
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <div class="toolbar-top">
+        <input id="searchInput" type="search" placeholder="Pesquisar por nome, ficheiro ou descricao..." />
+        <p id="resultsCount" class="results-count"></p>
+      </div>
+      <div class="toolbar-bottom">
+        <div id="categoryFilters" class="filter-row"></div>
+        <label class="fav-toggle">
+          <input id="favoritesOnly" type="checkbox" />
+          <span>So favoritos</span>
+        </label>
+      </div>
+      <div class="toolbar-bottom toolbar-actions">
+        <div id="tagFilters" class="tag-filter-row"></div>
+        <button id="exportPlan" class="btn btn-small" type="button">Exportar plano</button>
+      </div>
+    </section>
+
+    <section class="stats" id="statsRow"></section>
+
+    <section>
+      <h2 class="section-title">Ferramentas Disponiveis</h2>
+      <div id="cardsGrid" class="cards-grid"></div>
+      <p id="emptyState" class="empty-state hidden">Nenhuma ferramenta encontrada com esse filtro.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>GamingOptimizer Visual Guide · localhost edition</p>
+  </footer>
+
+  <template id="toolCardTemplate">
+    <article class="tool-card">
+      <div class="card-head">
+        <span class="chip"></span>
+        <h3></h3>
+      </div>
+      <p class="card-description"></p>
+      <ul class="meta-list">
+        <li><strong>Ficheiro:</strong> <code class="file-path"></code></li>
+        <li><strong>Tipo:</strong> <span class="tool-type"></span></li>
+        <li><strong>Risco:</strong> <span class="risk-level"></span></li>
+        <li><strong>Admin:</strong> <span class="admin-required"></span></li>
+      </ul>
+      <div class="tags"></div>
+      <div class="command-block">
+        <p>Comando sugerido:</p>
+        <code class="run-command"></code>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-small copy-btn" type="button">Copiar comando</button>
+        <button class="btn btn-small fav-btn" type="button">Favoritar</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

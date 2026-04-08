@@ -1,0 +1,394 @@
+﻿{
+    "generatedAt":  "2026-04-08T11:03:21",
+    "tools":  [
+                  {
+                      "name":  "CPU Tweaks",
+                      "category":  "Modules",
+                      "type":  "PowerShell module",
+                      "file":  "src/modules/CPUTweaks.ps1",
+                      "description":  "Modulo de otimizacao para gaming.",
+                      "run":  ".\\\\src\\\\modules\\\\CPUTweaks.ps1",
+                      "risk":  "medium",
+                      "admin":  true,
+                      "tags":  [
+                                   "CPU"
+                               ],
+                      "modes":  [
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "GPU Tweaks",
+                      "category":  "Modules",
+                      "type":  "PowerShell module",
+                      "file":  "src/modules/GPUTweaks.ps1",
+                      "description":  "Modulo de otimizacao para gaming.",
+                      "run":  ".\\\\src\\\\modules\\\\GPUTweaks.ps1",
+                      "risk":  "medium",
+                      "admin":  true,
+                      "tags":  [
+                                   "GPU"
+                               ],
+                      "modes":  [
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "Network Tweaks",
+                      "category":  "Modules",
+                      "type":  "PowerShell module",
+                      "file":  "src/modules/NetworkTweaks.ps1",
+                      "description":  "Modulo de otimizacao para gaming.",
+                      "run":  ".\\\\src\\\\modules\\\\NetworkTweaks.ps1",
+                      "risk":  "medium",
+                      "admin":  true,
+                      "tags":  [
+                                   "Network"
+                               ],
+                      "modes":  [
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "Service Manager",
+                      "category":  "Modules",
+                      "type":  "PowerShell module",
+                      "file":  "src/modules/ServiceManager.ps1",
+                      "description":  "Modulo de otimizacao para gaming.",
+                      "run":  ".\\\\src\\\\modules\\\\ServiceManager.ps1",
+                      "risk":  "low",
+                      "admin":  true,
+                      "tags":  [
+                                   "Advanced"
+                               ],
+                      "modes":  [
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "Storage Tweaks",
+                      "category":  "Modules",
+                      "type":  "PowerShell module",
+                      "file":  "src/modules/StorageTweaks.ps1",
+                      "description":  "Modulo de otimizacao para gaming.",
+                      "run":  ".\\\\src\\\\modules\\\\StorageTweaks.ps1",
+                      "risk":  "low",
+                      "admin":  true,
+                      "tags":  [
+                                   "Storage"
+                               ],
+                      "modes":  [
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "CPU Detector",
+                      "category":  "Detection",
+                      "type":  "PowerShell detection",
+                      "file":  "src/detection/CPUDetector.ps1",
+                      "description":  "Detecao e diagnostico de hardware/sistema.",
+                      "run":  ".\\\\src\\\\detection\\\\CPUDetector.ps1",
+                      "risk":  "medium",
+                      "admin":  false,
+                      "tags":  [
+                                   "CPU",
+                                   "Detect"
+                               ],
+                      "modes":  [
+                                    "safe",
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "GPU Detector",
+                      "category":  "Detection",
+                      "type":  "PowerShell detection",
+                      "file":  "src/detection/GPUDetector.ps1",
+                      "description":  "Detecao e diagnostico de hardware/sistema.",
+                      "run":  ".\\\\src\\\\detection\\\\GPUDetector.ps1",
+                      "risk":  "medium",
+                      "admin":  false,
+                      "tags":  [
+                                   "GPU",
+                                   "Detect"
+                               ],
+                      "modes":  [
+                                    "safe",
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "Hardware Detector",
+                      "category":  "Detection",
+                      "type":  "PowerShell detection",
+                      "file":  "src/detection/HardwareDetector.ps1",
+                      "description":  "Detecao e diagnostico de hardware/sistema.",
+                      "run":  ".\\\\src\\\\detection\\\\HardwareDetector.ps1",
+                      "risk":  "low",
+                      "admin":  false,
+                      "tags":  [
+                                   "Detect"
+                               ],
+                      "modes":  [
+                                    "safe",
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "System Info",
+                      "category":  "Detection",
+                      "type":  "PowerShell detection",
+                      "file":  "src/detection/SystemInfo.ps1",
+                      "description":  "Detecao e diagnostico de hardware/sistema.",
+                      "run":  ".\\\\src\\\\detection\\\\SystemInfo.ps1",
+                      "risk":  "low",
+                      "admin":  false,
+                      "tags":  [
+                                   "Detect"
+                               ],
+                      "modes":  [
+                                    "safe",
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "Backup Manager",
+                      "category":  "Utilities",
+                      "type":  "PowerShell utility",
+                      "file":  "src/utils/BackupManager.ps1",
+                      "description":  "Utilitario de suporte e seguranca.",
+                      "run":  ".\\\\src\\\\utils\\\\BackupManager.ps1",
+                      "risk":  "low",
+                      "admin":  true,
+                      "tags":  [
+                                   "Safety"
+                               ],
+                      "modes":  [
+                                    "safe",
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "Elevate",
+                      "category":  "Utilities",
+                      "type":  "PowerShell utility",
+                      "file":  "src/utils/Elevate.ps1",
+                      "description":  "Utilitario de suporte e seguranca.",
+                      "run":  ".\\\\src\\\\utils\\\\Elevate.ps1",
+                      "risk":  "low",
+                      "admin":  true,
+                      "tags":  [
+                                   "Safety"
+                               ],
+                      "modes":  [
+                                    "safe",
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "Logger",
+                      "category":  "Utilities",
+                      "type":  "PowerShell utility",
+                      "file":  "src/utils/Logger.ps1",
+                      "description":  "Utilitario de suporte e seguranca.",
+                      "run":  ".\\\\src\\\\utils\\\\Logger.ps1",
+                      "risk":  "low",
+                      "admin":  true,
+                      "tags":  [
+                                   "Safety"
+                               ],
+                      "modes":  [
+                                    "safe",
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "Restore Point",
+                      "category":  "Utilities",
+                      "type":  "PowerShell utility",
+                      "file":  "src/utils/RestorePoint.ps1",
+                      "description":  "Utilitario de suporte e seguranca.",
+                      "run":  ".\\\\src\\\\utils\\\\RestorePoint.ps1",
+                      "risk":  "low",
+                      "admin":  true,
+                      "tags":  [
+                                   "Safety"
+                               ],
+                      "modes":  [
+                                    "safe",
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "Validation",
+                      "category":  "Utilities",
+                      "type":  "PowerShell utility",
+                      "file":  "src/utils/Validation.ps1",
+                      "description":  "Utilitario de suporte e seguranca.",
+                      "run":  ".\\\\src\\\\utils\\\\Validation.ps1",
+                      "risk":  "low",
+                      "admin":  true,
+                      "tags":  [
+                                   "Safety"
+                               ],
+                      "modes":  [
+                                    "safe",
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "Profile Manager",
+                      "category":  "Profiles",
+                      "type":  "PowerShell profile",
+                      "file":  "src/profiles/ProfileManager.ps1",
+                      "description":  "Gestao e aplicacao de perfis.",
+                      "run":  ".\\\\src\\\\profiles\\\\ProfileManager.ps1",
+                      "risk":  "low",
+                      "admin":  true,
+                      "tags":  [
+                                   "Profile"
+                               ],
+                      "modes":  [
+                                    "all"
+                                ]
+                  },
+                  {
+                      "name":  "Balanced Profile",
+                      "category":  "Profiles",
+                      "type":  "JSON profile",
+                      "file":  "src/profiles/default_profiles/balanced.json",
+                      "description":  "Perfil predefinido para cenario balanced.",
+                      "run":  "Carregado via ProfileManager",
+                      "risk":  "low",
+                      "admin":  false,
+                      "tags":  [
+                                   "Profile",
+                                   "B",
+                                   "alanced"
+                               ],
+                      "modes":  [
+                                    "all"
+                                ]
+                  },
+                  {
+                      "name":  "Competitive Profile",
+                      "category":  "Profiles",
+                      "type":  "JSON profile",
+                      "file":  "src/profiles/default_profiles/competitive.json",
+                      "description":  "Perfil predefinido para cenario competitive.",
+                      "run":  "Carregado via ProfileManager",
+                      "risk":  "medium",
+                      "admin":  false,
+                      "tags":  [
+                                   "Profile",
+                                   "C",
+                                   "ompetitive"
+                               ],
+                      "modes":  [
+                                    "competitive"
+                                ]
+                  },
+                  {
+                      "name":  "Streaming Profile",
+                      "category":  "Profiles",
+                      "type":  "JSON profile",
+                      "file":  "src/profiles/default_profiles/streaming.json",
+                      "description":  "Perfil predefinido para cenario streaming.",
+                      "run":  "Carregado via ProfileManager",
+                      "risk":  "medium",
+                      "admin":  false,
+                      "tags":  [
+                                   "Profile",
+                                   "S",
+                                   "treaming"
+                               ],
+                      "modes":  [
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "Apply Keyboard Input Lag Tweaks",
+                      "category":  "Extra Tweaks",
+                      "type":  "CMD launcher",
+                      "file":  "tweaks\\keyboard_input_lag\\Apply-KeyboardInputLagTweaks.cmd",
+                      "description":  "Script extra de tweak/revert.",
+                      "run":  ".\\\\tweaks\\keyboard_input_lag\\Apply-KeyboardInputLagTweaks.cmd",
+                      "risk":  "low",
+                      "admin":  true,
+                      "tags":  [
+                                   "Keyboard"
+                               ],
+                      "modes":  [
+                                    "all"
+                                ]
+                  },
+                  {
+                      "name":  "Apply Keyboard Input Lag Tweaks",
+                      "category":  "Extra Tweaks",
+                      "type":  "PowerShell script",
+                      "file":  "tweaks\\keyboard_input_lag\\Apply-KeyboardInputLagTweaks.ps1",
+                      "description":  "Script extra de tweak/revert.",
+                      "run":  ".\\\\tweaks\\keyboard_input_lag\\Apply-KeyboardInputLagTweaks.ps1",
+                      "risk":  "low",
+                      "admin":  true,
+                      "tags":  [
+                                   "Keyboard"
+                               ],
+                      "modes":  [
+                                    "all"
+                                ]
+                  },
+                  {
+                      "name":  "Revert Keyboard Input Lag Tweaks",
+                      "category":  "Extra Tweaks",
+                      "type":  "CMD launcher",
+                      "file":  "tweaks\\keyboard_input_lag\\Revert-KeyboardInputLagTweaks.cmd",
+                      "description":  "Script extra de tweak/revert.",
+                      "run":  ".\\\\tweaks\\keyboard_input_lag\\Revert-KeyboardInputLagTweaks.cmd",
+                      "risk":  "low",
+                      "admin":  true,
+                      "tags":  [
+                                   "Keyboard",
+                                   "Safety"
+                               ],
+                      "modes":  [
+                                    "safe",
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  },
+                  {
+                      "name":  "Revert Keyboard Input Lag Tweaks",
+                      "category":  "Extra Tweaks",
+                      "type":  "PowerShell script",
+                      "file":  "tweaks\\keyboard_input_lag\\Revert-KeyboardInputLagTweaks.ps1",
+                      "description":  "Script extra de tweak/revert.",
+                      "run":  ".\\\\tweaks\\keyboard_input_lag\\Revert-KeyboardInputLagTweaks.ps1",
+                      "risk":  "low",
+                      "admin":  true,
+                      "tags":  [
+                                   "Keyboard",
+                                   "Safety"
+                               ],
+                      "modes":  [
+                                    "safe",
+                                    "competitive",
+                                    "streaming"
+                                ]
+                  }
+              ]
+}

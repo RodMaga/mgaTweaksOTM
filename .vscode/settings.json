@@ -1,0 +1,6 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        ".\\Generate-ToolsData.ps1": true,
+        ".\\web-guide\\Start-LocalGuide.ps1": true
+    }
+}
