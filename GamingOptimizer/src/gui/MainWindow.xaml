@@ -1,1 +1,475 @@
-<!-- Layout principal com duas abas -->
+<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="Mga Optimizer"
+	Height="740"
+	Width="1060"
+	MinHeight="620"
+	MinWidth="900"
+	WindowStartupLocation="CenterScreen"
+	ResizeMode="CanResize"
+	Background="#0D1218"
+	Foreground="#D7E2EE"
+	FontFamily="Segoe UI Variable Display">
+
+	<Window.Resources>
+		<Color x:Key="CardColor">#131A22</Color>
+		<Color x:Key="CardBorder">#253241</Color>
+		<Color x:Key="PrimaryColor">#00C48C</Color>
+		<Color x:Key="PrimaryColorHover">#17D8A0</Color>
+		<Color x:Key="SecondaryColor">#1A2430</Color>
+		<Color x:Key="SecondaryColorHover">#243244</Color>
+
+		<SolidColorBrush x:Key="CardBrush" Color="{StaticResource CardColor}" />
+		<SolidColorBrush x:Key="CardBorderBrush" Color="{StaticResource CardBorder}" />
+		<SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
+		<SolidColorBrush x:Key="PrimaryHoverBrush" Color="{StaticResource PrimaryColorHover}" />
+		<SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}" />
+		<SolidColorBrush x:Key="SecondaryHoverBrush" Color="{StaticResource SecondaryColorHover}" />
+		<SolidColorBrush x:Key="TextMutedBrush" Color="#8EA4B7" />
+		<SolidColorBrush x:Key="WindowBorderBrush" Color="#1E2A37" />
+
+		<Style x:Key="HeaderCard" TargetType="Border">
+			<Setter Property="Background">
+				<Setter.Value>
+					<LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+						<GradientStop Color="#131D28" Offset="0" />
+						<GradientStop Color="#0E1721" Offset="1" />
+					</LinearGradientBrush>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="BorderBrush" Value="#264055" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="CornerRadius" Value="14" />
+			<Setter Property="Padding" Value="16" />
+			<Setter Property="Margin" Value="0,0,0,14" />
+		</Style>
+
+		<Style x:Key="PanelCard" TargetType="Border">
+			<Setter Property="Background" Value="{StaticResource CardBrush}" />
+			<Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="CornerRadius" Value="12" />
+			<Setter Property="Padding" Value="14" />
+		</Style>
+
+		<Style x:Key="CategoryText" TargetType="TextBlock">
+			<Setter Property="FontSize" Value="13" />
+			<Setter Property="FontWeight" Value="SemiBold" />
+			<Setter Property="Margin" Value="0,10,0,6" />
+			<Setter Property="Foreground" Value="{StaticResource TextMutedBrush}" />
+		</Style>
+
+		<Style x:Key="TweakCheckBox" TargetType="CheckBox">
+			<Setter Property="Margin" Value="0,4,0,4" />
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="Foreground" Value="#D7E2EE" />
+		</Style>
+
+		<Style x:Key="FilterLabel" TargetType="TextBlock">
+			<Setter Property="Foreground" Value="#90A7BB" />
+			<Setter Property="FontSize" Value="12" />
+			<Setter Property="Margin" Value="0,0,0,3" />
+		</Style>
+
+		<Style TargetType="ComboBox">
+			<Setter Property="Background" Value="#0E151D" />
+			<Setter Property="Foreground" Value="#D7E2EE" />
+			<Setter Property="BorderBrush" Value="#2A3A4D" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="Padding" Value="6,4" />
+		</Style>
+
+		<Style x:Key="InputTextBox" TargetType="TextBox">
+			<Setter Property="Background" Value="#0E151D" />
+			<Setter Property="Foreground" Value="#D7E2EE" />
+			<Setter Property="BorderBrush" Value="#2A3A4D" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="Padding" Value="8,4" />
+			<Setter Property="VerticalContentAlignment" Value="Center" />
+		</Style>
+
+		<Style TargetType="TabControl">
+			<Setter Property="Background" Value="#0F1720" />
+			<Setter Property="BorderBrush" Value="#263748" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="Padding" Value="4" />
+		</Style>
+
+		<Style TargetType="TabItem">
+			<Setter Property="Background" Value="#131D28" />
+			<Setter Property="Foreground" Value="#C6D8E8" />
+			<Setter Property="BorderBrush" Value="#2A3A4B" />
+			<Setter Property="Margin" Value="0,0,4,0" />
+			<Style.Triggers>
+				<Trigger Property="IsMouseOver" Value="True">
+					<Setter Property="Background" Value="#1A2736" />
+				</Trigger>
+				<Trigger Property="IsSelected" Value="True">
+					<Setter Property="Background" Value="#223346" />
+					<Setter Property="Foreground" Value="#F3FAFF" />
+					<Setter Property="FontWeight" Value="SemiBold" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+
+		<Style x:Key="LogTextBox" TargetType="TextBox">
+			<Setter Property="Background" Value="#0E151D" />
+			<Setter Property="Foreground" Value="#D2DFEC" />
+			<Setter Property="BorderBrush" Value="#263748" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="Padding" Value="10" />
+			<Setter Property="FontFamily" Value="Consolas" />
+			<Setter Property="FontSize" Value="12.5" />
+		</Style>
+
+		<Style x:Key="PrimaryButton" TargetType="Button">
+			<Setter Property="Padding" Value="16,8" />
+			<Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+			<Setter Property="Foreground" Value="#F3FFF9" />
+			<Setter Property="BorderThickness" Value="0" />
+			<Setter Property="Cursor" Value="Hand" />
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="FontWeight" Value="Bold" />
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Border CornerRadius="8" Background="{TemplateBinding Background}">
+							<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsMouseOver" Value="True">
+								<Setter Property="Background" Value="{StaticResource PrimaryHoverBrush}" />
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="False">
+								<Setter Property="Opacity" Value="0.55" />
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<Style x:Key="SecondaryButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
+			<Setter Property="Background" Value="{StaticResource SecondaryBrush}" />
+			<Setter Property="Foreground" Value="#B5CADC" />
+			<Style.Triggers>
+				<Trigger Property="IsMouseOver" Value="True">
+					<Setter Property="Background" Value="{StaticResource SecondaryHoverBrush}" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+
+		<Style x:Key="ToolCard" TargetType="Border" BasedOn="{StaticResource PanelCard}">
+			<Setter Property="Margin" Value="0,0,0,10" />
+			<Setter Property="Padding" Value="12" />
+		</Style>
+
+		<Style x:Key="ToolActionButton" TargetType="Button" BasedOn="{StaticResource SecondaryButton}">
+			<Setter Property="Margin" Value="0,0,8,8" />
+		</Style>
+
+		<Style x:Key="ToolActionsWrap" TargetType="WrapPanel">
+			<Setter Property="Orientation" Value="Horizontal" />
+			<Setter Property="HorizontalAlignment" Value="Right" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="Margin" Value="12,0,0,0" />
+			<Setter Property="MaxWidth" Value="360" />
+		</Style>
+	</Window.Resources>
+
+	<Grid Margin="18">
+		<Grid.Background>
+			<LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+				<GradientStop Color="#0B1117" Offset="0" />
+				<GradientStop Color="#111A24" Offset="1" />
+			</LinearGradientBrush>
+		</Grid.Background>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="2.2*" />
+			<ColumnDefinition Width="1.4*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Border Grid.ColumnSpan="2" Style="{StaticResource HeaderCard}">
+			<StackPanel>
+				<TextBlock Text="Mga Optimizer"
+						   FontSize="28"
+						   FontWeight="Bold" />
+				<TextBlock Margin="0,4,0,0"
+						   Foreground="{StaticResource TextMutedBrush}"
+						   Text="Gaming-focused Windows tuning with safe defaults and advanced controls." />
+			</StackPanel>
+		</Border>
+
+		<Border Grid.Row="1" Grid.Column="0" Style="{StaticResource PanelCard}">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+
+				<Grid Margin="0,0,0,10">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+
+					<ComboBox x:Name="CmbProfile"
+							  Height="32"
+							  VerticalAlignment="Center"
+							  SelectedIndex="0">
+						<ComboBoxItem Content="Safe" />
+						<ComboBoxItem Content="Balanced" />
+						<ComboBoxItem Content="Aggressive" />
+					</ComboBox>
+
+					<Button x:Name="BtnApplyProfile"
+							Grid.Column="1"
+							Style="{StaticResource SecondaryButton}"
+							Margin="10,0,0,0"
+							Content="Apply Profile" />
+				</Grid>
+
+				<Grid Grid.Row="1" Margin="0,0,0,10">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+
+					<StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+						<CheckBox x:Name="ChkCreateRestorePoint"
+								  Style="{StaticResource TweakCheckBox}"
+								  IsChecked="True"
+								  Content="Create restore point before applying"
+								  VerticalAlignment="Center" />
+						<Button x:Name="BtnExportPreset"
+								Style="{StaticResource SecondaryButton}"
+								Margin="14,0,8,0"
+								Content="Export Preset" />
+						<Button x:Name="BtnImportPreset"
+								Style="{StaticResource SecondaryButton}"
+								Content="Import Preset" />
+					</StackPanel>
+
+					<Grid Grid.Row="1">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="1.1*" />
+							<ColumnDefinition Width="0.9*" />
+							<ColumnDefinition Width="1.2*" />
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+
+						<StackPanel Grid.Column="0" Margin="0,0,8,0">
+							<TextBlock Style="{StaticResource FilterLabel}" Text="Category" />
+							<ComboBox x:Name="CmbCategoryFilter" Height="30" />
+						</StackPanel>
+
+						<StackPanel Grid.Column="1" Margin="0,0,8,0">
+							<TextBlock Style="{StaticResource FilterLabel}" Text="Risk" />
+							<ComboBox x:Name="CmbRiskFilter" Height="30" />
+						</StackPanel>
+
+						<StackPanel Grid.Column="2" Margin="0,0,8,0">
+							<TextBlock Style="{StaticResource FilterLabel}" Text="Search" />
+							<TextBox x:Name="TxtSearchFilter" Style="{StaticResource InputTextBox}" Height="30" />
+						</StackPanel>
+
+						<StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Bottom">
+							<Button x:Name="BtnApplyFilters"
+									Style="{StaticResource SecondaryButton}"
+									Content="Apply" />
+							<Button x:Name="BtnClearFilters"
+									Style="{StaticResource SecondaryButton}"
+									Margin="8,0,0,0"
+									Content="Clear" />
+						</StackPanel>
+					</Grid>
+				</Grid>
+
+				<TabControl Grid.Row="2" Foreground="#D2DEEA">
+					<TabItem Header="Tweaks">
+						<Border Background="#0D151E" BorderBrush="#243546" BorderThickness="1" Margin="4">
+							<ScrollViewer VerticalScrollBarVisibility="Auto">
+								<StackPanel x:Name="PnlTweaks" Margin="8" />
+							</ScrollViewer>
+						</Border>
+					</TabItem>
+
+					<TabItem Header="Services">
+						<Grid Margin="8">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+
+							<StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+								<Button x:Name="BtnRefreshServices"
+										Style="{StaticResource SecondaryButton}"
+										Content="Refresh" />
+								<Button x:Name="BtnDisableSelectedServices"
+										Style="{StaticResource SecondaryButton}"
+										Margin="8,0,0,0"
+										Content="Disable Selected" />
+								<Button x:Name="BtnManualSelectedServices"
+										Style="{StaticResource SecondaryButton}"
+										Margin="8,0,0,0"
+										Content="Set Manual" />
+							</StackPanel>
+
+							<ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+								<StackPanel x:Name="PnlServices" />
+							</ScrollViewer>
+						</Grid>
+					</TabItem>
+
+					<TabItem Header="FPS Boost Tools">
+						<ScrollViewer VerticalScrollBarVisibility="Auto">
+							<StackPanel Margin="8">
+								<TextBlock Text="Performance tools inspired by the Chris Titus style, curated for gaming responsiveness."
+										   Foreground="{StaticResource TextMutedBrush}"
+										   Margin="0,0,0,10" />
+
+								<Border Style="{StaticResource ToolCard}">
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*" />
+											<ColumnDefinition Width="Auto" />
+										</Grid.ColumnDefinitions>
+										<StackPanel>
+											<TextBlock Text="Auto Personalized Profiles" FontWeight="Bold" FontSize="15" />
+											<TextBlock Margin="0,4,0,0" Foreground="{StaticResource TextMutedBrush}" TextWrapping="Wrap"
+													   Text="Detects CPU, RAM, GPU, network and USB/HID devices and creates optimized profile files for Process Lasso and ISLC." />
+										</StackPanel>
+										<WrapPanel Grid.Column="1" Style="{StaticResource ToolActionsWrap}">
+											<Button x:Name="BtnApplyAutoToolProfile" Style="{StaticResource ToolActionButton}" Content="Apply Auto Profile Now" />
+											<Button x:Name="BtnGenerateAutoToolProfiles" Style="{StaticResource ToolActionButton}" Content="Generate Profiles" />
+											<Button x:Name="BtnOpenAutoProfilesFolder" Style="{StaticResource ToolActionButton}" Content="Open Folder" />
+										</WrapPanel>
+									</Grid>
+								</Border>
+
+								<Border Style="{StaticResource ToolCard}">
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*" />
+											<ColumnDefinition Width="Auto" />
+										</Grid.ColumnDefinitions>
+										<StackPanel>
+											<TextBlock Text="Process Lasso" FontWeight="Bold" FontSize="15" />
+											<TextBlock Margin="0,4,0,0" Foreground="{StaticResource TextMutedBrush}" TextWrapping="Wrap"
+													   Text="Automatic priority, affinity and process behavior tuning. Great for FiveM and CPU-bound games." />
+										</StackPanel>
+										<WrapPanel Grid.Column="1" Style="{StaticResource ToolActionsWrap}">
+											<Button x:Name="BtnInstallProcessLasso" Style="{StaticResource ToolActionButton}" Content="Install" />
+											<Button x:Name="BtnOpenProcessLasso" Style="{StaticResource ToolActionButton}" Content="Website" />
+										</WrapPanel>
+									</Grid>
+								</Border>
+
+								<Border Style="{StaticResource ToolCard}">
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*" />
+											<ColumnDefinition Width="Auto" />
+										</Grid.ColumnDefinitions>
+										<StackPanel>
+											<TextBlock Text="ISLC (Intelligent Standby List Cleaner)" FontWeight="Bold" FontSize="15" />
+											<TextBlock Margin="0,4,0,0" Foreground="{StaticResource TextMutedBrush}" TextWrapping="Wrap"
+													   Text="Helps clear standby memory and reduce stutter spikes during gameplay." />
+										</StackPanel>
+										<WrapPanel Grid.Column="1" Style="{StaticResource ToolActionsWrap}">
+											<Button x:Name="BtnInstallISLC" Style="{StaticResource ToolActionButton}" Content="Install" />
+											<Button x:Name="BtnOpenISLC" Style="{StaticResource ToolActionButton}" Content="Website" />
+										</WrapPanel>
+									</Grid>
+								</Border>
+
+								<Border Style="{StaticResource ToolCard}">
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*" />
+											<ColumnDefinition Width="Auto" />
+										</Grid.ColumnDefinitions>
+										<StackPanel>
+											<TextBlock Text="Built-in Timer Resolution" FontWeight="Bold" FontSize="15" />
+											<TextBlock Margin="0,4,0,0" Foreground="{StaticResource TextMutedBrush}" TextWrapping="Wrap"
+													   Text="Apply timer resolution directly from Mga Optimizer (no external app required)." />
+										</StackPanel>
+										<WrapPanel Grid.Column="1" Style="{StaticResource ToolActionsWrap}">
+											<Button x:Name="BtnApplyTimer05" Style="{StaticResource ToolActionButton}" Content="Apply 0.5 ms" />
+											<Button x:Name="BtnApplyTimer1" Style="{StaticResource ToolActionButton}" Content="Apply 1.0 ms" />
+										</WrapPanel>
+									</Grid>
+								</Border>
+
+								<Border Style="{StaticResource ToolCard}">
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*" />
+											<ColumnDefinition Width="Auto" />
+										</Grid.ColumnDefinitions>
+										<StackPanel>
+											<TextBlock Text="Monitoring (HWMonitor / MSI Afterburner)" FontWeight="Bold" FontSize="15" />
+											<TextBlock Margin="0,4,0,0" Foreground="{StaticResource TextMutedBrush}" TextWrapping="Wrap"
+													   Text="Does not increase FPS directly, but helps debug thermals, clocks and bottlenecks." />
+										</StackPanel>
+										<WrapPanel Grid.Column="1" Style="{StaticResource ToolActionsWrap}">
+											<Button x:Name="BtnInstallAfterburner" Style="{StaticResource ToolActionButton}" Content="Afterburner" />
+											<Button x:Name="BtnInstallHWMonitor" Style="{StaticResource ToolActionButton}" Content="HWMonitor" />
+										</WrapPanel>
+									</Grid>
+								</Border>
+							</StackPanel>
+						</ScrollViewer>
+					</TabItem>
+				</TabControl>
+			</Grid>
+		</Border>
+
+		<Border Grid.Row="1" Grid.Column="1" Style="{StaticResource PanelCard}" Margin="14,0,0,0">
+			<DockPanel>
+				<TextBlock DockPanel.Dock="Top"
+						   Text="Execution Log"
+						   FontSize="17"
+						   FontWeight="SemiBold"
+						   Margin="0,0,0,10" />
+				<TextBox x:Name="TxtLog"
+						 Style="{StaticResource LogTextBox}"
+						 AcceptsReturn="True"
+						 IsReadOnly="True"
+						 TextWrapping="Wrap"
+						 VerticalScrollBarVisibility="Auto" />
+			</DockPanel>
+		</Border>
+
+		<Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="0,14,0,0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+
+			<TextBlock Grid.Column="0"
+					   VerticalAlignment="Center"
+					   Foreground="{StaticResource TextMutedBrush}"
+					   Text="Run this utility as administrator for all tweaks to work." />
+
+			<Button x:Name="BtnRollbackAll"
+					Grid.Column="1"
+					Style="{StaticResource SecondaryButton}"
+					Margin="0,0,10,0"
+					Content="Rollback Last Apply" />
+
+			<Button x:Name="BtnApply"
+					Grid.Column="2"
+					Style="{StaticResource PrimaryButton}"
+					Content="Apply Selected Tweaks" />
+		</Grid>
+	</Grid>
+</Window>

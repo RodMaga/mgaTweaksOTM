@@ -1,0 +1,553 @@
+{
+  "tweaks": [
+    {
+      "id": "delete_temp_files",
+      "label": "Delete Temporary Files",
+      "category": "Essential",
+      "risk": "low",
+      "description": "Clears user and Windows temp directories.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "flush_dns",
+      "label": "Flush DNS",
+      "category": "Essential",
+      "risk": "low",
+      "description": "Flushes DNS resolver cache.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "run_disk_cleanup",
+      "label": "Run Disk Cleanup",
+      "category": "Essential",
+      "risk": "low",
+      "description": "Runs cleanmgr in low disk mode.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "keyboard_input_lag",
+      "label": "Apply keyboard input lag tweaks",
+      "category": "Input",
+      "risk": "medium",
+      "description": "Applies keyboard repeat, accessibility and USB input queue tuning.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_usb_power_saving",
+      "label": "Disable USB power saving",
+      "category": "Input",
+      "risk": "medium",
+      "description": "Disables USB selective suspend in current power plan.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "raw_input_priority",
+      "label": "Set raw input priority",
+      "category": "Input",
+      "risk": "medium",
+      "description": "Applies high multimedia task priority for games.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_keyboard_repeat_delay",
+      "label": "Disable keyboard repeat delay tweaks",
+      "category": "Input",
+      "risk": "low",
+      "description": "Sets keyboard repeat delay to lowest value.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_mouse_accel",
+      "label": "Disable mouse acceleration (raw feel)",
+      "category": "Input",
+      "risk": "low",
+      "description": "Sets MouseSpeed, MouseThreshold1 and MouseThreshold2 to zero.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_gamebar",
+      "label": "Disable Xbox Game Bar overlays",
+      "category": "System",
+      "risk": "low",
+      "description": "Disables Game Bar and Game DVR overlays and recording hooks.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "game_mode_on",
+      "label": "Force Game Mode ON",
+      "category": "GPU",
+      "risk": "low",
+      "description": "Forces Windows Game Mode flags.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_mpo",
+      "label": "Disable MPO (Multiplane Overlay)",
+      "category": "GPU",
+      "risk": "medium",
+      "description": "Disables MPO to mitigate stutters on some systems.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "hw_scheduling",
+      "label": "Enable hardware-accelerated GPU scheduling",
+      "category": "System",
+      "risk": "medium",
+      "description": "Sets HwSchMode for supported GPUs.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "ultimate_power_plan",
+      "label": "Enable and switch to Ultimate Performance plan",
+      "category": "System",
+      "risk": "medium",
+      "description": "Creates and activates Ultimate Performance power plan.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "cpu_core_parking_disable",
+      "label": "Disable CPU core parking",
+      "category": "CPU",
+      "risk": "medium",
+      "description": "Sets CPU core parking min and max to 100%.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_dynamic_tick",
+      "label": "Disable dynamic tick",
+      "category": "CPU",
+      "risk": "high",
+      "description": "Applies BCDEdit disabledynamictick=yes.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_hpet",
+      "label": "Disable HPET",
+      "category": "CPU",
+      "risk": "high",
+      "description": "Applies BCDEdit useplatformclock=false.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "disable_hibernation",
+      "label": "Disable hibernation",
+      "category": "System",
+      "risk": "high",
+      "description": "Turns off hibernation and removes hiberfil.sys.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_startup_delay",
+      "label": "Disable startup apps delay",
+      "category": "System",
+      "risk": "low",
+      "description": "Removes startup app launch delay.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_transparency",
+      "label": "Disable desktop transparency effects",
+      "category": "System",
+      "risk": "low",
+      "description": "Reduces compositor visual overhead.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_fullscreen_optimizations",
+      "label": "Disable Fullscreen Optimizations",
+      "category": "Advanced",
+      "risk": "medium",
+      "description": "Applies full-screen optimization compatibility flags.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "network_profile",
+      "label": "Set low-latency multimedia scheduling profile",
+      "category": "Network",
+      "risk": "medium",
+      "description": "Adjusts NetworkThrottlingIndex and SystemResponsiveness.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_power_throttling",
+      "label": "Disable power throttling for foreground responsiveness",
+      "category": "Network",
+      "risk": "medium",
+      "description": "Disables PowerThrottlingOff policy.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_nagle_algorithm",
+      "label": "Disable Nagle's Algorithm",
+      "category": "Network",
+      "risk": "medium",
+      "description": "Sets TCPNoDelay and TcpAckFrequency on all interfaces.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "set_dns_cloudflare",
+      "label": "Set DNS to Cloudflare",
+      "category": "Network",
+      "risk": "low",
+      "description": "Sets DNS servers to 1.1.1.1 and 1.0.0.1.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "set_dns_google",
+      "label": "Set DNS to Google",
+      "category": "Network",
+      "risk": "low",
+      "description": "Sets DNS servers to 8.8.8.8 and 8.8.4.4.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "disable_delivery_optimization",
+      "label": "Disable Delivery Optimization peer downloads",
+      "category": "Network",
+      "risk": "low",
+      "description": "Disables peer-to-peer update delivery.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_background_apps",
+      "label": "Limit background app activity",
+      "category": "Memory",
+      "risk": "medium",
+      "description": "Sets GlobalUserDisabled for background apps.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_sysmain",
+      "label": "Disable SysMain (Superfetch)",
+      "category": "Memory",
+      "risk": "medium",
+      "description": "Disables SysMain service.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_memory_compression",
+      "label": "Disable Memory Compression",
+      "category": "Memory",
+      "risk": "medium",
+      "description": "Uses Disable-MMAgent for memory compression.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "large_system_cache",
+      "label": "Enable Large System Cache",
+      "category": "Memory",
+      "risk": "medium",
+      "description": "Sets LargeSystemCache=1.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_windows_search",
+      "label": "Disable Windows Search service",
+      "category": "Services",
+      "risk": "medium",
+      "description": "Disables WSearch indexing service.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_print_spooler",
+      "label": "Disable Print Spooler",
+      "category": "Services",
+      "risk": "medium",
+      "description": "Disables print spooler if printing is not used.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "disable_bluetooth_services",
+      "label": "Disable Bluetooth services",
+      "category": "Services",
+      "risk": "medium",
+      "description": "Disables core Bluetooth services.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "disable_xbox_services",
+      "label": "Disable Xbox services",
+      "category": "Services",
+      "risk": "low",
+      "description": "Disables Xbox background services.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_diagtrack_service",
+      "label": "Disable Diagnostics Tracking service",
+      "category": "Services",
+      "risk": "medium",
+      "description": "Disables DiagTrack service.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_ntfs_last_access",
+      "label": "Disable NTFS Last Access update",
+      "category": "Storage",
+      "risk": "low",
+      "description": "Sets fsutil disablelastaccess to 1.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_defrag_schedule",
+      "label": "Disable defrag schedule",
+      "category": "Storage",
+      "risk": "medium",
+      "description": "Disables ScheduledDefrag task.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "trim_optimization",
+      "label": "Run Trim optimization",
+      "category": "Storage",
+      "risk": "low",
+      "description": "Runs ReTrim on fixed drives.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "max_cpu_state_100",
+      "label": "Force max CPU state = 100%",
+      "category": "Power",
+      "risk": "medium",
+      "description": "Sets processor min/max state to 100%.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_sleep_states",
+      "label": "Disable sleep and idle states",
+      "category": "Power",
+      "risk": "high",
+      "description": "Disables standby/hibernate timeouts.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_defender_realtime",
+      "label": "Disable Windows Defender realtime monitoring",
+      "category": "Advanced",
+      "risk": "high",
+      "description": "Disables Defender realtime monitoring. Security impact.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "disable_ipv6",
+      "label": "Disable IPv6",
+      "category": "Advanced",
+      "risk": "high",
+      "description": "Disables IPv6 stack via DisabledComponents.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "prefer_ipv4_over_ipv6",
+      "label": "Prefer IPv4 over IPv6",
+      "category": "Advanced",
+      "risk": "medium",
+      "description": "Prioritizes IPv4 without full IPv6 disable.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_copilot",
+      "label": "Disable Microsoft Copilot",
+      "category": "Advanced",
+      "risk": "low",
+      "description": "Turns off Windows Copilot policy.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_storage_sense",
+      "label": "Disable Storage Sense",
+      "category": "Advanced",
+      "risk": "low",
+      "description": "Disables automatic Storage Sense cleanup.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_teredo",
+      "label": "Disable Teredo",
+      "category": "Advanced",
+      "risk": "medium",
+      "description": "Disables Teredo tunneling interface.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "set_classic_right_click_menu",
+      "label": "Set Classic Right-Click Menu",
+      "category": "Advanced",
+      "risk": "low",
+      "description": "Enables classic context menu behavior.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "set_display_for_performance",
+      "label": "Set Display for Performance",
+      "category": "Advanced",
+      "risk": "low",
+      "description": "Sets visual effects profile to best performance.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "set_time_utc_dualboot",
+      "label": "Set Time to UTC (Dual Boot)",
+      "category": "Advanced",
+      "risk": "medium",
+      "description": "Sets RealTimeIsUniversal for dual-boot compatibility.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "set_timer_resolution_05ms",
+      "label": "Set timer resolution request (0.5 ms)",
+      "category": "CPU",
+      "risk": "high",
+      "description": "Requests 0.5 ms timer resolution for current session.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "set_timer_resolution_1ms",
+      "label": "Set timer resolution request (1.0 ms)",
+      "category": "CPU",
+      "risk": "medium",
+      "description": "Requests 1.0 ms timer resolution for current session.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "set_interrupt_affinity_gpu_nic",
+      "label": "Set interrupt affinity policy (GPU/NIC)",
+      "category": "CPU",
+      "risk": "high",
+      "description": "Sets interrupt affinity policy to one close processor for GPU and NIC devices.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "enable_gpu_msi_mode",
+      "label": "Enable MSI mode (GPU)",
+      "category": "GPU",
+      "risk": "high",
+      "description": "Enables Message Signaled Interrupt mode for detected PCIe display adapters.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "disable_pcie_link_state_power_management",
+      "label": "Disable PCIe link state power management",
+      "category": "GPU",
+      "risk": "medium",
+      "description": "Sets PCI Express Link State Power Management to Off for AC/DC.",
+      "safeDefault": true,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "set_tcp_ack_frequency",
+      "label": "Set TcpAckFrequency",
+      "category": "Network",
+      "risk": "medium",
+      "description": "Sets TcpAckFrequency=1 across TCP interfaces.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "disable_qos_packet_scheduler",
+      "label": "Disable QoS Packet Scheduler (optional)",
+      "category": "Network",
+      "risk": "medium",
+      "description": "Disables ms_pacer binding on active network adapters.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "clear_standby_memory",
+      "label": "Clear standby memory list",
+      "category": "Memory",
+      "risk": "medium",
+      "description": "Purges standby memory list on demand.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "usb_polling_rate_optimization",
+      "label": "USB polling rate optimization",
+      "category": "Input",
+      "risk": "high",
+      "description": "Disables USB power saving and EnhancedPowerManagementEnabled where available.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "auto_game_process_priority_high",
+      "label": "Auto set process priority for games (High)",
+      "category": "System",
+      "risk": "medium",
+      "description": "Creates IFEO PerfOptions CpuPriorityClass=3 for common game executables.",
+      "safeDefault": false,
+      "aggressiveDefault": true
+    },
+    {
+      "id": "bcd_useplatformtick",
+      "label": "BCD tweak: useplatformtick=yes",
+      "category": "Advanced",
+      "risk": "high",
+      "description": "Sets BCD useplatformtick to yes.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    },
+    {
+      "id": "bcd_tscsyncpolicy_enhanced",
+      "label": "BCD tweak: tscsyncpolicy=Enhanced",
+      "category": "Advanced",
+      "risk": "high",
+      "description": "Sets BCD tscsyncpolicy to Enhanced.",
+      "safeDefault": false,
+      "aggressiveDefault": false
+    }
+  ]
+}
