@@ -1,0 +1,9 @@
+C:\Users\rodry\Desktop\mgaTweaksOTM\GamingOptimizer\src\gui\CSharp\GamingOptimizer.UI\obj\Debug\net8.0-windows\GamingOptimizer.UI.csproj.AssemblyReference.cache
+C:\Users\rodry\Desktop\mgaTweaksOTM\GamingOptimizer\src\gui\CSharp\GamingOptimizer.UI\obj\Debug\net8.0-windows\Styles\ButtonStyles.baml
+C:\Users\rodry\Desktop\mgaTweaksOTM\GamingOptimizer\src\gui\CSharp\GamingOptimizer.UI\obj\Debug\net8.0-windows\Styles\Colors.baml
+C:\Users\rodry\Desktop\mgaTweaksOTM\GamingOptimizer\src\gui\CSharp\GamingOptimizer.UI\obj\Debug\net8.0-windows\Styles\TextStyles.baml
+C:\Users\rodry\Desktop\mgaTweaksOTM\GamingOptimizer\src\gui\CSharp\GamingOptimizer.UI\obj\Debug\net8.0-windows\App.baml
+C:\Users\rodry\Desktop\mgaTweaksOTM\GamingOptimizer\src\gui\CSharp\GamingOptimizer.UI\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\rodry\Desktop\mgaTweaksOTM\GamingOptimizer\src\gui\CSharp\GamingOptimizer.UI\obj\Debug\net8.0-windows\GamingOptimizer.UI_MarkupCompile.cache
+C:\Users\rodry\Desktop\mgaTweaksOTM\GamingOptimizer\src\gui\CSharp\GamingOptimizer.UI\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\rodry\Desktop\mgaTweaksOTM\GamingOptimizer\src\gui\CSharp\GamingOptimizer.UI\obj\Debug\net8.0-windows\GamingOptimizer.UI_MarkupCompile.lref
